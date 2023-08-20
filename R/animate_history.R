@@ -1,7 +1,7 @@
 
 ##### ------------- animate_history _______________
-#' @title Build race-style bar plots of Destiny 2 weapon usage over time
-#' @description Creates an animated "race" graph showing the growth and change
+#' @title Build racing bar plots of Destiny 2 weapon usage over time
+#' @description Creates an animated graph showing the growth and change
 #' of total weapon usage through the period of time in the provided weapon-level
 #' activity data.
 #'
@@ -37,7 +37,7 @@ animate_history <- function(x, activity_type=NULL, limit=30, label="",
     summarize(groupedWeaponKills = sum(as.numeric(uniqueWeaponKills))) |>
     group_by(itemName) |>
     mutate(cumWeaponKills = cumsum(groupedWeaponKills))
-  paint::paint(gamedata)
+  #paint::paint(gamedata)
   # gamedata
 
   outputPath <- glue("{membershipId}-output")
