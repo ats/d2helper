@@ -11,7 +11,7 @@
 #' @param label The title to put on the plot
 #' @param prefix Prefix to output filename; only used if gif or av are TRUE
 #' @param gif Boolean: produce .gif file output?
-#' @param av Boolean: produce .mov file output?
+#' @param mp4 Boolean: produce .mp4 file output?
 #'
 #' @return If `gif` and `mp4` are `FALSE`, returns animated plot object that can be further manipulated or rendered using `animate`
 #' @export

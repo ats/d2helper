@@ -2,7 +2,7 @@
 % Please edit documentation in R/animate_history.R
 \name{animate_history}
 \alias{animate_history}
-\title{Build race-style bar plots of Destiny 2 weapon usage over time}
+\title{Build racing bar plots of Destiny 2 weapon usage over time}
 \usage{
 animate_history(
   x,
@@ -27,13 +27,13 @@ animate_history(
 
 \item{gif}{Boolean: produce .gif file output?}
 
-\item{av}{Boolean: produce .mov file output?}
+\item{mp4}{Boolean: produce .mp4 file output?}
 }
 \value{
 If \code{gif} and \code{mp4} are \code{FALSE}, returns animated plot object that can be further manipulated or rendered using \code{animate}
 }
 \description{
-Creates an animated "race" graph showing the growth and change
+Creates an animated graph showing the growth and change
 of total weapon usage through the period of time in the provided weapon-level
 activity data.
 }
