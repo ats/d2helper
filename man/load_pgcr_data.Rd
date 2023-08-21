@@ -7,7 +7,7 @@
 load_pgcr_data(user_id = NULL)
 }
 \arguments{
-\item{user_id}{}
+\item{user_id}{Destiny membership ID}
 }
 \value{
 

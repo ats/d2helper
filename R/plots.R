@@ -1,13 +1,13 @@
 
 #' Build treemap of weapon usage
 #'
-#' @param data
-#' @param type
-#' @param tier_weapon
-#' @param mode
-#' @param limit
-#' @param title
-#' @param subtitle
+#' @param data data set to use for plot
+#' @param type weapon type to filter
+#' @param tier_weapon weapon tier to filter (e.g. "legendary")
+#' @param mode game mode to filter for
+#' @param limit maximum number of weapons to include in plot
+#' @param title plot title
+#' @param subtitle plot subtitle
 #'
 #' @return
 #' @export
@@ -54,15 +54,15 @@ weapon_treemap <- function(data=NULL, type=NULL,
 
 #' Build barplot of weapon usage
 #'
-#' @param data
-#' @param type
-#' @param tier_weapon
-#' @param mode
-#' @param limit
-#' @param ncol
-#' @param text_size
-#' @param title
-#' @param subtitle
+#' @param data data set to use for plot
+#' @param type weapon type to filter
+#' @param tier_weapon weapon tier to filter (e.g. "legendary")
+#' @param mode game mode to filter for
+#' @param limit maximum number of weapons to include in plot
+#' @param ncol number of columns to build in a panel of barplots
+#' @param text_size font size for display
+#' @param title plot title
+#' @param subtitle plot subtitle
 #'
 #' @return
 #' @export

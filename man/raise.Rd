@@ -7,7 +7,13 @@
 raise(.data, unnest, label, displayValue = TRUE)
 }
 \arguments{
-\item{displayValue}{}
+\item{.data}{data frame passed into raise}
+
+\item{unnest}{list element whose \code{basic.displayValue} will be brought up}
+
+\item{label}{name of new field created by raise}
+
+\item{displayValue}{set to FALSE to use raw value rather than the displayValue in the nested json}
 }
 \value{
 

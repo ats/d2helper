@@ -17,7 +17,23 @@ weapon_barplot(
 )
 }
 \arguments{
-\item{subtitle}{}
+\item{data}{data set to use for plot}
+
+\item{type}{weapon type to filter}
+
+\item{tier_weapon}{weapon tier to filter (e.g. "legendary")}
+
+\item{mode}{game mode to filter for}
+
+\item{limit}{maximum number of weapons to include in plot}
+
+\item{ncol}{number of columns to build in a panel of barplots}
+
+\item{text_size}{font size for display}
+
+\item{title}{plot title}
+
+\item{subtitle}{plot subtitle}
 }
 \value{
 

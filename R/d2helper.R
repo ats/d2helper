@@ -1,7 +1,7 @@
 ##### ----------- load_user_data ------------
 #' Load stored PGCR data for a specified membership ID
 #'
-#' @param user_id
+#' @param user_id Destiny membership ID
 #'
 #' @return
 #' @export
@@ -60,10 +60,10 @@ filter_mode <- function(data, mode=NULL) {
 ##### ------------- raise -----------------
 #' Simplify repeated calls to nested elements of PGCR data
 #'
-#' @param .data
-#' @param unnest
-#' @param label
-#' @param displayValue
+#' @param .data data frame passed into raise
+#' @param unnest list element whose `basic.displayValue` will be brought up
+#' @param label name of new field created by raise
+#' @param displayValue set to FALSE to use raw value rather than the displayValue in the nested json
 #'
 #' @return
 #' @export
