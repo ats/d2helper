@@ -15,6 +15,7 @@
 #' @examples
 weapon_treemap <- function(data=NULL, type=NULL,
                            tier_weapon = NULL, mode = NULL,
+                           name_contains = NULL,
                            limit=200, title=NULL,
                            subtitle=NULL
 )
@@ -25,6 +26,11 @@ weapon_treemap <- function(data=NULL, type=NULL,
       # rowwise() |> filter(modeIn(mode, modeString)) -> data
       filter_mode(mode=mode) -> data
     #  print(data |> select(modeString) |> unique())
+  }
+
+  if (!is.null(name_contains)) {
+    data |>
+      filter(grepl(name_contains, displayProperties.name.x, ignore.case=TRUE)) -> data
   }
 
   if (!is.null(tier_weapon)) {
@@ -70,6 +76,7 @@ weapon_treemap <- function(data=NULL, type=NULL,
 #' @examples
 weapon_barplot <- function(data=NULL, type=NULL,
                            tier_weapon = NULL, mode = NULL,
+                           name_contains = NULL,
                            limit=5,
                            ncol=2,
                            text_size=2,
@@ -83,6 +90,11 @@ weapon_barplot <- function(data=NULL, type=NULL,
       # rowwise() |> filter(modeIn(mode, modeString)) -> data
       filter_mode(mode) -> data
     #print(data |> select(modeString) |> unique())
+  }
+
+  if (!is.null(name_contains)) {
+    data |>
+      filter(grepl(name_contains, displayProperties.name.x, ignore.case=TRUE)) -> data
   }
 
   if (!is.null(tier_weapon)) {
