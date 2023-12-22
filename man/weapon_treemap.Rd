@@ -9,6 +9,7 @@ weapon_treemap(
   type = NULL,
   tier_weapon = NULL,
   mode = NULL,
+  name_contains = NULL,
   limit = 200,
   title = NULL,
   subtitle = NULL
@@ -23,14 +24,13 @@ weapon_treemap(
 
 \item{mode}{game mode to filter for}
 
+\item{name_contains}{string to filter activity names}
+
 \item{limit}{maximum number of weapons to include in plot}
 
 \item{title}{plot title}
 
 \item{subtitle}{plot subtitle}
-}
-\value{
-
 }
 \description{
 Build treemap of weapon usage

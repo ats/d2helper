@@ -6,9 +6,6 @@
 \usage{
 save_pgcr_data(id = NULL, data_set = NULL)
 }
-\value{
-
-}
 \description{
 Saves data to a directory prepended with current membership ID
 }

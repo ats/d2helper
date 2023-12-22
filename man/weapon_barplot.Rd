@@ -7,8 +7,10 @@
 weapon_barplot(
   data = NULL,
   type = NULL,
+  type_n = NULL,
   tier_weapon = NULL,
   mode = NULL,
+  name_contains = NULL,
   limit = 5,
   ncol = 2,
   text_size = 2,
@@ -21,9 +23,13 @@ weapon_barplot(
 
 \item{type}{weapon type to filter}
 
+\item{type_n}{number of weapon types to include in plot (defaults to all)}
+
 \item{tier_weapon}{weapon tier to filter (e.g. "legendary")}
 
 \item{mode}{game mode to filter for}
+
+\item{name_contains}{string to filter activity names}
 
 \item{limit}{maximum number of weapons to include in plot}
 
@@ -34,9 +40,6 @@ weapon_barplot(
 \item{title}{plot title}
 
 \item{subtitle}{plot subtitle}
-}
-\value{
-
 }
 \description{
 Build barplot of weapon usage

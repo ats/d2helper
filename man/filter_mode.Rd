@@ -11,9 +11,6 @@ filter_mode(data, mode = NULL)
 
 \item{mode}{Required: Integer representing a Destiny 2 activity type}
 }
-\value{
-
-}
 \description{
 This convenience function filters for a specific game type
 (mode) in record using dplyr's filter, searching via 'grepl' for the

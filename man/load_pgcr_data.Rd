@@ -9,9 +9,6 @@ load_pgcr_data(user_id = NULL)
 \arguments{
 \item{user_id}{Destiny membership ID}
 }
-\value{
-
-}
 \description{
 Load stored PGCR data for a specified membership ID
 }

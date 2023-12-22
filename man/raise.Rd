@@ -15,9 +15,6 @@ raise(.data, unnest, label, displayValue = TRUE)
 
 \item{displayValue}{set to FALSE to use raw value rather than the displayValue in the nested json}
 }
-\value{
-
-}
 \description{
 Simplify repeated calls to nested elements of PGCR data
 }

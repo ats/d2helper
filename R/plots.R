@@ -5,6 +5,7 @@
 #' @param type weapon type to filter
 #' @param tier_weapon weapon tier to filter (e.g. "legendary")
 #' @param mode game mode to filter for
+#' @param name_contains string to filter activity names
 #' @param limit maximum number of weapons to include in plot
 #' @param title plot title
 #' @param subtitle plot subtitle
@@ -62,8 +63,10 @@ weapon_treemap <- function(data=NULL, type=NULL,
 #'
 #' @param data data set to use for plot
 #' @param type weapon type to filter
+#' @param type_n number of weapon types to include in plot (defaults to all)
 #' @param tier_weapon weapon tier to filter (e.g. "legendary")
 #' @param mode game mode to filter for
+#' @param name_contains string to filter activity names
 #' @param limit maximum number of weapons to include in plot
 #' @param ncol number of columns to build in a panel of barplots
 #' @param text_size font size for display
@@ -75,6 +78,7 @@ weapon_treemap <- function(data=NULL, type=NULL,
 #'
 #' @examples
 weapon_barplot <- function(data=NULL, type=NULL,
+                           type_n=NULL,
                            tier_weapon = NULL, mode = NULL,
                            name_contains = NULL,
                            limit=5,
@@ -112,7 +116,15 @@ weapon_barplot <- function(data=NULL, type=NULL,
   itemtype_levels <- data |> group_by(itemType) |> summarise(total = sum(as.numeric(uniqueWeaponKills))) |> arrange(desc(total)) |> select(itemType)
   # print(itemtype_levels$itemType)
 
-  data |> group_by(itemType, itemName) |> summarise(total = sum(as.numeric(uniqueWeaponKills))) |>
+  if (is.null(type_n)) {
+    type_filter <- itemtype_levels
+  } else {
+    type_filter <- slice_head(itemtype_levels, n=type_n)
+  }
+
+  data |>
+    filter(itemType %in% type_filter$itemType) |>
+    group_by(itemType, itemName) |> summarise(total = sum(as.numeric(uniqueWeaponKills))) |>
 
     arrange(desc(total)) |>group_by(itemType) |> slice_head(n=limit) |>
     ggplot(aes(x=total, y=forcats::fct_reorder(itemName, total))) +
